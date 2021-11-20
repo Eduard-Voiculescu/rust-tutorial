@@ -3,9 +3,5 @@
 version = 3
 
 [[package]]
-name = "guessing_game"
-version = "0.1.0"
-
-[[package]]
 name = "hello_world"
 version = "0.1.0"
