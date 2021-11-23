@@ -3,5 +3,7 @@ members = [
     "hello_world",
     "guessing_game",
     "variables",
-    "ownership"
+    "ownership",
+    "structs",
+    "rectangles"
 ]
