@@ -7,5 +7,6 @@ members = [
     "structs",
     "rectangles",
     "enums",
-    "restaurant"
+    "restaurant",
+    "common_collections"
 ]
