@@ -13,6 +13,10 @@ name = "common_collections"
 version = "0.1.0"
 
 [[package]]
+name = "common_collections_exercices"
+version = "0.1.0"
+
+[[package]]
 name = "enums"
 version = "0.1.0"
 

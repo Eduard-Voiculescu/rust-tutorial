@@ -8,5 +8,6 @@ members = [
     "rectangles",
     "enums",
     "restaurant",
-    "common_collections"
+    "common_collections",
+    "common_collections_exercices"
 ]
