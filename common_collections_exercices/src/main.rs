@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 use std::io;
+use std::process::exit;
 
 fn main() {
     match mean(&vec![1, 4, 74, 435, 99, 12, 66, 120]) {
@@ -33,12 +34,16 @@ fn main() {
 
     let mut input = String::new();
 
+    println!("Enter a text to convert to pig latin");
+
     io::stdin().read_line(&mut input)
         .expect("Failed to read from stdin");
 
     let pig_latin_text = to_pig_latin(&input);
 
     println!("The text is [{}] and in pig latin [{}]", input, pig_latin_text);
+
+    start_company_software();
 }
 
 fn mean(list_of_integers: &Vec<i32>) -> Option<f64> {
@@ -132,4 +137,115 @@ fn to_pig_latin(text: &str) -> String {
     }
 
     pig_latin_text
+}
+
+fn start_company_software() {
+    let mut map: HashMap<String, Vec<String>> = HashMap::new();
+
+    println!("Add departments, employees or fetch data by department or company.");
+
+    loop {
+        let mut input = String::new();
+
+        println!();
+        println!("Please choose any of the following options:");
+        println!("1) Add a department.");
+        println!("2) Add an employee.");
+        println!("3) View all employees by department.");
+        println!("4) View all employees in the company by department.");
+        println!("q) Exit application.");
+
+        io::stdin().read_line(&mut input)
+            .expect("Failed to read from stdin");
+
+        let input: char = match input.trim().parse() {
+            Ok(inp) => inp, // all good, do nothing
+            Err(_) => continue // as the input wasn't proper to what was asked
+        };
+
+        match input {
+            '1' => add_department(&mut map),
+            '2' => add_employee(&mut map),
+            '3' => view_all_employees_by_department(&mut map),
+            '4' => println!("Company directory: {:?}", map),
+            'q' => exit(0),
+            _ => panic!("Invalid input.")
+        }
+    }
+
+}
+
+fn add_department(map: &mut HashMap<String, Vec<String>>) {
+    println!("Enter the name of the department.");
+
+    let mut department = String::new();
+
+    io::stdin().read_line( &mut department)
+        .expect("Failed to read from stdin");
+
+    let dept: String = match department.trim().parse() {
+        Ok(dept) => dept,
+        Err(_) => panic!("Invalid department input.")
+    };
+
+    map.entry(dept).or_insert(Vec::new());
+
+    println!("Company map: {:?}", map);
+    println!();
+}
+
+fn add_employee(map: &mut HashMap<String, Vec<String>>) {
+    println!("Enter the name of the department.");
+
+    let mut department = String::new();
+
+    io::stdin().read_line( &mut department)
+        .expect("Failed to read from stdin");
+
+    let dept: String = match department.trim().parse() {
+        Ok(dept) => dept,
+        Err(_) => panic!("Invalid department input.")
+    };
+
+    let employees: Option<&mut Vec<String>> = map.get_mut(&dept);
+
+    println!("Enter the name of the employee.");
+
+    let mut employee_name= String::new();
+
+    io::stdin().read_line(&mut employee_name)
+        .expect("Failed to read from stdin");
+
+    let empl_name: String = match employee_name.trim().parse() {
+        Ok(empl) => empl,
+        Err(_) => panic!("Invalid employee name input.")
+    };
+
+    if let Some(employees_vector) = employees {
+        employees_vector.push(empl_name);
+    } else {
+        panic!("Invalid input.");
+    }
+
+    println!("Company map: {:?}", map);
+    println!();
+}
+
+fn view_all_employees_by_department(map: &mut HashMap<String, Vec<String>>) {
+    println!("Enter the name of the dept");
+
+    let mut dept = String::new();
+
+    io::stdin()
+        .read_line(&mut dept)
+        .expect("Failed to read line");
+
+    let dept: String = match dept.trim().parse() {
+        Ok(s) => s,
+        Err(_) => panic!("invalid dept input"),
+    };
+
+    let employees = map.get(&dept);
+
+    println!("Employees for dept: {}, are: {:?}", dept, employees);
 }
