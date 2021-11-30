@@ -9,5 +9,6 @@ members = [
     "enums",
     "restaurant",
     "common_collections",
-    "common_collections_exercices"
+    "common_collections_exercices",
+    "error-handling"
 ]
