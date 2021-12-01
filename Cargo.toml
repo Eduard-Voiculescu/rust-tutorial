@@ -10,5 +10,6 @@ members = [
     "restaurant",
     "common_collections",
     "common_collections_exercices",
-    "error-handling"
+    "error-handling",
+    "generics"
 ]
