@@ -1,3 +1,5 @@
+use std::detect::__is_feature_detected::xsave;
+use std::fmt::Display;
 use generics::{NewsArticle, Summary, Tweet};
 
 struct Point<T, U> {
@@ -26,13 +28,44 @@ fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
     largest
 }
 
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
+}
+
+fn longest_with_an_annoncement<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a str where T: Display {
+    println!("Annoncement! {}", ann);
+
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+
 fn main() {
     let p1 = Point { x: 5, y: 10.4 };
     let p2 = Point { x: "Hello", y: 'c' };
 
     let p3 = p1.mixup(p2);
 
-    println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
+    println!("p3.x = {}, \
+    p3.y = {}", p3.x, p3.y);
 
     let tweet = Tweet {
         username: String::from("horse_ebooks"),
@@ -66,4 +99,10 @@ fn main() {
 
     let result = largest(&char_list);
     println!("The largest char is {}", result);
+
+    let string1 = String::from("abcd");
+    let string2 = "xyz";
+
+    let result = longest(string1.as_str(), string2);
+    println!("The longest string is {}", result);
 }
