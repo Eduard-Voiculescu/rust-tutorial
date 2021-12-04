@@ -13,9 +13,11 @@
       <sourceFolder url="file://$MODULE_DIR$/enums/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/restaurant/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/common_collections/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/adder/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/common_collections_exercices/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/error-handling/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/generics/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/adder/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/hello_world/target" />
       <excludeFolder url="file://$MODULE_DIR$/guessing_game/target" />
