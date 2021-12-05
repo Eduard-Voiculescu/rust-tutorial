@@ -12,5 +12,6 @@ members = [
     "common_collections_exercices",
     "error-handling",
     "generics",
-    "adder"
+    "adder",
+    "minigrep"
 ]
