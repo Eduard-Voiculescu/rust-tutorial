@@ -13,5 +13,13 @@ members = [
     "error-handling",
     "generics",
     "adder",
-    "minigrep"
+    "minigrep",
+    "iterators_closure",
+    "cargo-crates"
 ]
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3

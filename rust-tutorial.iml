@@ -18,6 +18,8 @@
       <sourceFolder url="file://$MODULE_DIR$/error-handling/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/generics/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/adder/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/cargo-crates/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/iterators_closure/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/minigrep/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/hello_world/target" />
