@@ -15,7 +15,8 @@ members = [
     "adder",
     "minigrep",
     "iterators_closure",
-    "cargo-crates"
+    "cargo-crates",
+    "smart_pointers"
 ]
 
 [profile.dev]
