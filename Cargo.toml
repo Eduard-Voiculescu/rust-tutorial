@@ -18,7 +18,9 @@ members = [
     "cargo-crates",
     "smart_pointers",
     "threads",
-    "oop"
+    "oop",
+    "gui",
+    "blog"
 ]
 
 [profile.dev]

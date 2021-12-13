@@ -23,6 +23,8 @@
       <sourceFolder url="file://$MODULE_DIR$/minigrep/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/smart_pointers/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/threads/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blog/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/gui/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/oop/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/hello_world/target" />
