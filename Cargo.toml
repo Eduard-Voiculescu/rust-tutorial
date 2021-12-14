@@ -20,7 +20,8 @@ members = [
     "threads",
     "oop",
     "gui",
-    "blog"
+    "blog",
+    "pattern_matching"
 ]
 
 [profile.dev]
