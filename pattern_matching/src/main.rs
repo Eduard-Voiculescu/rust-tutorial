@@ -35,8 +35,48 @@ fn main() {
 
     let point = (3, 5);
     print_coordinates(&point);
+
+    let x = Some(5);
+    let y = 10;
+
+    match x {
+        Some(50) => println!("Got 50"),
+        Some(y) => println!("Matched, y = {:?}", y), // just a shadowed variable to the y above, but in a new scope, so nothing related to the y = 10
+        _ => println!("Default case, x = {:?}", x),
+    }
+
+    println!("at the end: x = {:?}, y = {:?}", x, y);
+
+    let x = 1;
+
+    match x {
+        1 | 2 => println!("one or two"),
+        3 => println!("three"),
+        _ => println!("anything"),
+    }
+
+    let x = 5;
+
+    match x {
+        1..=5 => println!("one through five"), // inclusive
+        _ => println!("something else"),
+    }
+
+    let p = Point { x: 0, y: 7 };
+
+    match p {
+        Point { x, y: 0 } => println!("On the x axis at {}", x),
+        Point { x: 0, y } => println!("On the y axis at {}", y),
+        Point { x, y } => println!("On neither axis: ({}, {})", x, y),
+    }
+
 }
 
 fn print_coordinates(&(x, y): &(i32, i32)) {
     println!("Current location: ({}, {})", x, y);
+}
+
+struct Point {
+    x: i32,
+    y: i32
 }
