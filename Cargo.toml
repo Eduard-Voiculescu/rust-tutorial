@@ -21,7 +21,8 @@ members = [
     "oop",
     "gui",
     "blog",
-    "pattern_matching"
+    "pattern_matching",
+    "advanced_features"
 ]
 
 [profile.dev]
