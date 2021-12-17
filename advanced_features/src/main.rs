@@ -81,6 +81,12 @@ fn main() {
 
     let w = Wrapper(vec![String::from("hello"), String::from("world")]);
     println!("w = {}", w);
+
+    // type synonym is good when the type is very lengthy, for example: type Thunk = Box<dyn Fn() + Send + 'static>
+    type Kilometers = i32; // kilometers is only a synonym of i32
+    let x: i32 = 5;
+    let y: Kilometers = 5;
+    println!("x + y = {}", x + y);
 }
 
 unsafe fn dangerous() {}
